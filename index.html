@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Oren Lavi | Lavi Labs</title>
+  <meta name="description" content="Fractional Head of Marketing for growing companies that need sharper positioning, better lead generation, useful automation, and senior marketing direction." />
+  <meta name="theme-color" content="#fbfbfb" />
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+  <link rel="preload" as="image" href="assets/lavi-labs-mark.svg" />
+  <link rel="preload" as="image" href="assets/oren-portrait-cropped.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header" aria-label="Site header">
+    <a class="brand" href="#top" aria-label="Lavi Labs home">
+      <img src="assets/lavi-labs-mark.svg" alt="Lavi Labs" />
+    </a>
+    <nav class="site-nav" aria-label="Primary navigation">
+      <a href="#work">Work with me</a>
+      <a href="results.html">Results</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-inner">
+        <div class="hero-copy">
+          <h1 id="hero-title">
+            <span>Hello, I'm Oren.</span>
+            <span>I'm a fractional head of marketing.</span>
+          </h1>
+        </div>
+
+        <div class="hero-game-stage" data-hero-snake aria-label="Playable Snake hero background">
+          <canvas class="hero-snake-canvas" data-hero-snake-canvas aria-label="Snake game background"></canvas>
+          <img class="hero-portrait" src="assets/oren-portrait-cropped.png" alt="Oren Lavi" />
+          <canvas class="hero-snake-ghost" data-hero-snake-ghost aria-hidden="true"></canvas>
+
+          <div class="hero-hud">
+            <button class="hero-start" type="button" data-hero-snake-start>Start</button>
+            <div class="hero-score" aria-live="polite">
+              Score <strong data-hero-snake-score>0</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-high-scores" aria-label="All time high scores">
+        <div class="hero-high-score-track">
+          <span>All time high scores</span>
+          <span>Oren 99</span>
+          <span>Flamingo 87</span>
+          <span>Inventory Bot 76</span>
+          <span>Revenue Loop 72</span>
+          <span>Founder Mode 64</span>
+          <span>Lead Engine 58</span>
+          <span>All time high scores</span>
+          <span>Oren 99</span>
+          <span>Flamingo 87</span>
+          <span>Inventory Bot 76</span>
+          <span>Revenue Loop 72</span>
+          <span>Founder Mode 64</span>
+          <span>Lead Engine 58</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="work" aria-labelledby="about-title">
+      <div class="section-inner about-grid">
+        <div>
+          <h2 id="about-title">My job is simple: help growing companies turn marketing into revenue.</h2>
+        </div>
+        <div class="about-copy">
+          <p>I am a brand, content, and growth leader with experience across B2B SaaS, service businesses, education, events, and local-market growth. I have led brand and content at Winning by Design, built large-scale marketing systems, managed creative teams and contractors across 15 countries, produced major launches and events, and helped companies translate messy ideas into clear positioning, sharper websites, better campaigns, and sales-ready assets.</p>
+          <p>Today, I work with companies as a fractional Head of Marketing, bringing senior-level strategy without the full-time executive overhead. That can mean rebuilding your website, tightening your offer, creating a practical content engine, improving conversion, launching retention campaigns, building brand systems, or simply giving your team a clearer plan and better creative direction.</p>
+          <p>I am especially useful when a business has real momentum but the marketing feels scattered, underpowered, or too dependent on the founder. I help turn that into a system.</p>
+          <a class="button" href="mailto:hello@lavilabs.com">Get in touch</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="footer-inner">
+      <a class="footer-mark" href="#top" aria-label="Back to top">
+        <img src="assets/lavi-labs-logo.png" alt="Lavi Labs" />
+      </a>
+      <nav aria-label="Footer navigation">
+        <a href="mailto:hello@lavilabs.com">Email</a>
+        <a href="https://www.linkedin.com/" rel="noreferrer">LinkedIn</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="snake.js"></script>
+</body>
+</html>
