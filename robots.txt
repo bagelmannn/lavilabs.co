@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://lavilabs.com/sitemap.xml
+Sitemap: https://lavilabs.co/sitemap.xml

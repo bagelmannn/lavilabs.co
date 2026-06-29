@@ -18,7 +18,7 @@ http://127.0.0.1:8798/
 
 ## Launch Notes
 
-- Production domain: `lavilabs.com`
+- Production domain: `lavilabs.co`
 - Homepage: `index.html`
 - Contact page: `contact.html`
 - Results page: `results.html`

@@ -6,6 +6,6 @@ Oren works as a fractional Head of Marketing for growing companies that need sha
 
 Core pages:
 
-- Homepage: https://lavilabs.com/
-- Results: https://lavilabs.com/results.html
-- Contact: https://lavilabs.com/contact.html
+- Homepage: https://lavilabs.co/
+- Results: https://lavilabs.co/results.html
+- Contact: https://lavilabs.co/contact.html
