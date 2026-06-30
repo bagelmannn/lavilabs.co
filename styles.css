@@ -442,23 +442,23 @@ p {
 }
 
 .contact-page .section-inner {
-  width: min(1870px, calc(100% - clamp(2rem, 7.5vw, 9.5rem)));
+  width: min(1200px, calc(100% - 2rem));
 }
 
 .contact-page h1 {
-  max-width: 1600px;
+  max-width: 1120px;
   margin-bottom: clamp(2.6rem, 6vw, 5rem);
   font-size: clamp(4.2rem, 8vw, 7.1rem);
   line-height: 0.98;
 }
 
 .contact-intro {
-  max-width: 1580px;
+  max-width: 1120px;
   margin-bottom: clamp(2rem, 4vw, 3.5rem);
 }
 
 .contact-intro p {
-  max-width: 1580px;
+  max-width: 1120px;
   margin-bottom: 1.2rem;
   color: #344054;
   font-size: clamp(1.14rem, 1.65vw, 1.45rem);
