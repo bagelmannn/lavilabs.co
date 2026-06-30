@@ -5,9 +5,9 @@
   --white: #ffffff;
   --coral: #e85f4f;
   --line: rgba(16, 24, 40, 0.12);
-  --lcd: #8f9a67;
-  --lcd-light: #aeb97f;
-  --lcd-dark: #1f2c1d;
+  --lcd: #e85f4f;
+  --lcd-light: #ffd8d2;
+  --lcd-dark: #32110d;
   --font: Inter, "Avenir Next", "Helvetica Neue", Arial, sans-serif;
   --mono: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
   --radius: 20px;
@@ -195,8 +195,9 @@ p {
   border-radius: var(--radius);
   background: var(--lcd);
   box-shadow:
-    inset 0 0 0 1px rgba(31, 44, 29, 0.22),
-    inset 0 0 48px rgba(31, 44, 29, 0.12),
+    inset 0 0 0 1px rgba(50, 17, 13, 0.2),
+    inset 0 28px 70px rgba(255, 255, 255, 0.1),
+    inset 0 -42px 76px rgba(50, 17, 13, 0.12),
     0 24px 70px rgba(16, 24, 40, 0.1);
   touch-action: none;
 }
@@ -208,13 +209,27 @@ p {
   z-index: 3;
   pointer-events: none;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.045) 1px, transparent 1px),
-    radial-gradient(circle at 18% 26%, rgba(255, 255, 255, 0.11), transparent 28%),
-    radial-gradient(circle at 78% 68%, rgba(31, 44, 29, 0.1), transparent 34%),
-    linear-gradient(135deg, rgba(232, 95, 79, 0.2), transparent 35%);
-  background-size: 100% 4px, 100% 100%, 100% 100%, 100% 100%;
+    linear-gradient(145deg, rgba(255, 255, 255, 0.16), transparent 36%),
+    linear-gradient(325deg, rgba(50, 17, 13, 0.12), transparent 42%),
+    repeating-linear-gradient(60deg, rgba(255, 255, 255, 0.12) 0 1px, transparent 1px 34px),
+    repeating-linear-gradient(120deg, rgba(50, 17, 13, 0.11) 0 1px, transparent 1px 34px),
+    radial-gradient(circle at 18% 24%, rgba(255, 255, 255, 0.18), transparent 24%),
+    radial-gradient(circle at 82% 76%, rgba(50, 17, 13, 0.16), transparent 32%);
   mix-blend-mode: soft-light;
-  opacity: 0.78;
+  opacity: 0.86;
+}
+
+.hero-game-stage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(50, 17, 13, 0.045) 1px, transparent 1px);
+  background-size: 100% 5px, 44px 100%;
+  opacity: 0.44;
 }
 
 .hero-snake-canvas,
@@ -268,8 +283,8 @@ p {
   min-height: 42px;
   padding: 0.58rem 0.8rem;
   color: var(--lcd-dark);
-  background: rgba(184, 194, 142, 0.58);
-  border: 1px solid rgba(31, 44, 29, 0.18);
+  background: rgba(255, 216, 210, 0.58);
+  border: 1px solid rgba(50, 17, 13, 0.18);
   border-radius: 999px;
   font-family: var(--mono);
   font-size: clamp(0.78rem, 1.2vw, 0.96rem);
@@ -292,9 +307,9 @@ p {
   padding: 0.74rem 1.1rem;
   color: var(--lcd-light);
   background: var(--lcd-dark);
-  border: 1px solid rgba(31, 44, 29, 0.62);
+  border: 1px solid rgba(50, 17, 13, 0.62);
   border-radius: 999px;
-  box-shadow: 0 12px 26px rgba(31, 44, 29, 0.12);
+  box-shadow: 0 12px 26px rgba(50, 17, 13, 0.16);
   cursor: pointer;
   font-family: var(--mono);
   font-size: 0.84rem;
@@ -319,19 +334,19 @@ p {
 .hero-high-scores {
   position: relative;
   z-index: 3;
-  left: 50%;
-  width: 100vw;
+  width: min(1200px, calc(100% - 2rem));
   min-height: 34px;
   overflow: hidden;
   display: flex;
   align-items: center;
-  margin-top: 0;
+  margin: 0 auto;
   color: rgba(16, 24, 40, 0.58);
-  background: rgba(251, 251, 251, 0.74);
+  background: rgba(251, 251, 251, 0.58);
   border-top: 1px solid rgba(16, 24, 40, 0.08);
   border-bottom: 1px solid rgba(16, 24, 40, 0.08);
-  transform: translateX(-50%);
   backdrop-filter: blur(12px);
+  mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 7%, #000 93%, transparent 100%);
   pointer-events: none;
 }
 
@@ -342,7 +357,7 @@ p {
   width: max-content;
   padding: 0.58rem 0;
   white-space: nowrap;
-  animation: high-score-scroll 34s linear infinite;
+  animation: high-score-scroll 42s linear infinite;
 }
 
 .hero-high-score-track span {
@@ -354,8 +369,7 @@ p {
   text-transform: uppercase;
 }
 
-.hero-high-score-track span:first-child,
-.hero-high-score-track span:nth-child(8) {
+.hero-high-score-track span:nth-child(7n + 1) {
   color: rgba(232, 95, 79, 0.82);
 }
 

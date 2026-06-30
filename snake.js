@@ -10,10 +10,10 @@
   const ctx = canvas.getContext("2d");
   const ghostCtx = ghostCanvas.getContext("2d");
 
-  const lcd = "#8f9a67";
-  const lcdLight = "#aeb97f";
-  const pixel = "#1f2c1d";
-  const foodColor = "#e85f4f";
+  const lcd = "#e85f4f";
+  const lcdLight = "#ffd8d2";
+  const pixel = "#32110d";
+  const foodColor = "#fff2c4";
   const directions = {
     up: { x: 0, y: -1 },
     down: { x: 0, y: 1 },
@@ -132,28 +132,39 @@
     ctx.fillStyle = lcd;
     ctx.fillRect(0, 0, width, height);
 
-    ctx.fillStyle = "rgba(255, 255, 255, 0.045)";
-    for (let y = 0; y < height; y += 4) {
+    ctx.fillStyle = "rgba(255, 255, 255, 0.055)";
+    for (let y = 0; y < height; y += 5) {
       ctx.fillRect(0, y, width, 1);
     }
 
-    ctx.fillStyle = "rgba(31, 44, 29, 0.045)";
-    for (let y = 9; y < height; y += 28) {
-      for (let x = (y % 56) / 2; x < width; x += 56) {
+    ctx.fillStyle = "rgba(50, 17, 13, 0.045)";
+    for (let y = 11; y < height; y += 34) {
+      for (let x = (y % 68) / 2; x < width; x += 68) {
         ctx.fillRect(x, y, 2, 2);
       }
     }
 
-    ctx.fillStyle = "rgba(255, 255, 255, 0.035)";
-    for (let y = 22; y < height; y += 42) {
-      for (let x = ((y + 14) % 84) / 2; x < width; x += 84) {
-        ctx.fillRect(x, y, 1, 1);
-      }
+    ctx.strokeStyle = "rgba(255, 216, 210, 0.06)";
+    ctx.lineWidth = 1;
+    for (let x = -height; x < width; x += 56) {
+      ctx.beginPath();
+      ctx.moveTo(x, height);
+      ctx.lineTo(x + height, 0);
+      ctx.stroke();
+    }
+
+    ctx.strokeStyle = "rgba(50, 17, 13, 0.055)";
+    for (let x = 0; x < width + height; x += 56) {
+      ctx.beginPath();
+      ctx.moveTo(x, 0);
+      ctx.lineTo(x - height, height);
+      ctx.stroke();
     }
 
     const vignette = ctx.createRadialGradient(width * 0.38, height * 0.22, 0, width * 0.38, height * 0.22, width * 0.74);
-    vignette.addColorStop(0, "rgba(255, 255, 255, 0.1)");
-    vignette.addColorStop(1, "rgba(31, 44, 29, 0.16)");
+    vignette.addColorStop(0, "rgba(255, 216, 210, 0.18)");
+    vignette.addColorStop(0.56, "rgba(232, 95, 79, 0.02)");
+    vignette.addColorStop(1, "rgba(50, 17, 13, 0.2)");
     ctx.fillStyle = vignette;
     ctx.fillRect(0, 0, width, height);
   };
@@ -181,7 +192,7 @@
     ctx.arc(point.x, point.y, radius, 0, Math.PI * 2);
     ctx.fill();
 
-    ctx.strokeStyle = "rgba(31, 44, 29, 0.32)";
+    ctx.strokeStyle = "rgba(50, 17, 13, 0.32)";
     ctx.lineWidth = Math.max(1, radius * 0.16);
     ctx.stroke();
   };
@@ -192,7 +203,7 @@
     drawFood();
 
     snake.forEach((segment, index) => {
-      const color = index === 0 ? "#152113" : pixel;
+      const color = index === 0 ? "#210a07" : pixel;
       drawCell(ctx, segment, { color });
 
       if (isInPortraitZone(segment)) {
